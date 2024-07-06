@@ -1,4 +1,4 @@
-import { TradeAttempt } from "./trade_attempt.model";
+import { TradeAttempt } from "./trade-attempt.model";
 
 export class TradeIdea {
     constructor(

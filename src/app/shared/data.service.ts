@@ -3,8 +3,8 @@ import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 
 import { Trade } from './trade.model';
-import { TradeAttempt } from './trade_attempt.model';
-import { TradeIdea } from './trade_idea.model';
+import { TradeAttempt } from './trade-attempt.model';
+import { TradeIdea } from './trade-idea.model';
 
 @Injectable({
   providedIn: 'root'
