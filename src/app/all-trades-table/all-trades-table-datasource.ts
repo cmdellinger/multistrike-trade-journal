@@ -22,7 +22,7 @@ export class AllTradesTableDataSource extends DataSource<AllTradesTableItem> {
 
   constructor(private dataService: DataService) {
     super();
-    this.data = this.dataService.getTrades();
+    this.data = dataService.getTrades();
   }
   
   NgOnInit() {

@@ -1,8 +1,9 @@
 import { TradeAttempt } from "./trade-attempt.model";
 
-export class TradeIdea {
-    constructor(
-            public ticker: string,
-            public attempts: TradeAttempt[]
-        ) { }
+export interface TradeIdea {
+    id: number,
+    ticker: string,
+    attempts: TradeAttempt[]
 }
+
+export interface TradeIdeas extends Array<TradeIdea> {}
