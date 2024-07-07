@@ -9,6 +9,7 @@
     <mat-expansion-panel (opened)="panelOpenState.set(true)" (closed)="panelOpenState.set(false)">
     <mat-expansion-panel-header>
         <mat-panel-title>
+          Attempts:
           @for (tradeAttempt of tradeIdea.attempts; track $index) {
             @if (isTradeAttemptProfitable(tradeAttempt)){
               ✔
@@ -18,7 +19,7 @@
           }
         </mat-panel-title>
         <mat-panel-description>
-          {{panelOpenState() ? 'Attempt Tables' : 'attempt tables ⬇️'}}
+          {{panelOpenState() ? 'Close ⬆️' : 'Trade Details ⬇️'}}
         </mat-panel-description>
     </mat-expansion-panel-header>
       @for (tradeAttempt of tradeIdea.attempts; track $index) {
