@@ -2,7 +2,7 @@
     <mat-expansion-panel hideToggle>
     <mat-expansion-panel-header>
         <mat-panel-title> {{tradeIdea.ticker}} </mat-panel-title>
-        <mat-panel-description> Setup: Breakout {{tradeAttemptPnl(tradeIdea.attempts[0])}} </mat-panel-description>
+        <mat-panel-description> Setup: Breakout </mat-panel-description>
     </mat-expansion-panel-header>
     <p>Attempted to long the breakout of $10,000 level. (fictional)</p>
     </mat-expansion-panel>
@@ -18,12 +18,18 @@
           }
         </mat-panel-title>
         <mat-panel-description>
-        table {{panelOpenState() ? 'open' : 'closed'}}
+        tables {{panelOpenState() ? 'open' : 'closed'}}
         </mat-panel-description>
     </mat-expansion-panel-header>
-      <div>
-        this is where the table goes
-      </div>
+      @for (tradeAttempt of tradeIdea.attempts; track $index) {
+        <div>
+          <h3>Attempt {{ $index + 1 }} [PnL: {{ tradeAttemptPnl(tradeAttempt) }}]</h3>
+          <h4>opens</h4>
+            <app-trade-attempt-table [trades]="tradeAttempt.opens"></app-trade-attempt-table>
+          <h4>closes</h4>
+            <app-trade-attempt-table [trades]="tradeAttempt.closes"></app-trade-attempt-table>
+        </div>
+      }
     </mat-expansion-panel>
 </mat-accordion>
 
