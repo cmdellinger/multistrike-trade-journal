@@ -18,7 +18,7 @@
           }
         </mat-panel-title>
         <mat-panel-description>
-        tables {{panelOpenState() ? 'open' : 'closed'}}
+          {{panelOpenState() ? 'Attempt Tables' : 'attempt tables ⬇️'}}
         </mat-panel-description>
     </mat-expansion-panel-header>
       @for (tradeAttempt of tradeIdea.attempts; track $index) {
