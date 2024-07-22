@@ -2,6 +2,9 @@ import { AfterViewInit, Component, ViewChild } from '@angular/core';
 import { MatTableModule, MatTable } from '@angular/material/table';
 import { MatPaginatorModule, MatPaginator } from '@angular/material/paginator';
 import { MatSortModule, MatSort } from '@angular/material/sort';
+import {MatIconModule} from '@angular/material/icon';
+import {MatButtonModule} from '@angular/material/button';
+
 import { AllTradesTableDataSource, AllTradesTableItem } from './all-trades-table-datasource';
 import { DataService } from '../shared/data.service';
 
@@ -10,7 +13,12 @@ import { DataService } from '../shared/data.service';
   templateUrl: './all-trades-table.component.html',
   styleUrl: './all-trades-table.component.css',
   standalone: true,
-  imports: [MatTableModule, MatPaginatorModule, MatSortModule]
+  imports: [MatTableModule,
+            MatPaginatorModule,
+            MatSortModule, 
+            MatIconModule, 
+            MatButtonModule
+          ]
 })
 export class AllTradesTableComponent implements AfterViewInit {
   @ViewChild(MatPaginator) paginator!: MatPaginator;
