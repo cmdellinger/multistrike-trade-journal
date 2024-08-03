@@ -2,11 +2,13 @@ import { AfterViewInit, Component, ViewChild } from '@angular/core';
 import { MatTableModule, MatTable } from '@angular/material/table';
 import { MatPaginatorModule, MatPaginator } from '@angular/material/paginator';
 import { MatSortModule, MatSort } from '@angular/material/sort';
-import {MatIconModule} from '@angular/material/icon';
-import {MatButtonModule} from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
+import { MatButtonModule } from '@angular/material/button';
+import { MatDialogModule } from '@angular/material/dialog';
 
 import { AllTradesTableDataSource, AllTradesTableItem } from './all-trades-table-datasource';
 import { DataService } from '../shared/data.service';
+import { AddDataPopupService } from './add-data-popup/add-data-popup.service';
 
 @Component({
   selector: 'app-all-trades-table',
@@ -25,7 +27,8 @@ export class AllTradesTableComponent implements AfterViewInit {
   @ViewChild(MatSort) sort!: MatSort;
   @ViewChild(MatTable) table!: MatTable<AllTradesTableItem>;
 
-  constructor(private dataService: DataService) {}
+  constructor(private dataService: DataService,
+              private addDataPopup: AddDataPopupService) {}
 
   dataSource = new AllTradesTableDataSource(this.dataService);
 
@@ -36,6 +39,10 @@ export class AllTradesTableComponent implements AfterViewInit {
     this.dataSource.sort = this.sort;
     this.dataSource.paginator = this.paginator;
     this.table.dataSource = this.dataSource;
+  }
+
+  openPopup() {
+    this.addDataPopup.openPopup();
   }
 
 }
