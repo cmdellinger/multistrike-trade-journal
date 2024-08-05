@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, ViewChild } from '@angular/core';
+import { AfterViewInit, Component, ViewChild, inject } from '@angular/core';
 import { MatTableModule, MatTable } from '@angular/material/table';
 import { MatPaginatorModule, MatPaginator } from '@angular/material/paginator';
 import { MatSortModule, MatSort } from '@angular/material/sort';
@@ -7,7 +7,6 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatDialogModule } from '@angular/material/dialog';
 
 import { AllTradesTableDataSource, AllTradesTableItem } from './all-trades-table-datasource';
-import { DataService } from '../shared/data.service';
 import { DialogPopupService } from './dialog-popup/dialog-popup.service';
 
 @Component({
@@ -27,10 +26,11 @@ export class AllTradesTableComponent implements AfterViewInit {
   @ViewChild(MatSort) sort!: MatSort;
   @ViewChild(MatTable) table!: MatTable<AllTradesTableItem>;
 
-  constructor(private dataService: DataService,
-              private dialogPopup: DialogPopupService) {}
+  private dialogPopup = inject(DialogPopupService);
 
-  dataSource = new AllTradesTableDataSource(this.dataService);
+  constructor() {}
+
+  dataSource = new AllTradesTableDataSource();
 
   /** Columns displayed in the table. Columns IDs can be added, removed, or reordered. */
   displayedColumns = ['id', 'date', 'time', 'ticker', 'action', 'quantity', 'price'];

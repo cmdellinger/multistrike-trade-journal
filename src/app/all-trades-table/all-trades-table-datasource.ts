@@ -1,3 +1,4 @@
+import { inject } from '@angular/core';
 import { DataSource } from '@angular/cdk/collections';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
@@ -20,18 +21,21 @@ export class AllTradesTableDataSource extends DataSource<AllTradesTableItem> {
   paginator: MatPaginator | undefined;
   sort: MatSort | undefined;
 
-  constructor(private dataService: DataService) {
-    super();
-    this.data = dataService.getTrades();
-  }
+  private dataService = inject(DataService);
   
-  NgOnInit() {
+  constructor() {
+    super();
     this.data = this.dataService.getTrades();
     this.dataService.tradesChanged.subscribe(
       (trades: Trade[]) => {
         this.data = trades;
+        console.log("Data changed");
       }
     );
+  }
+
+  NgOnDestroy() {
+    this.dataService.tradesChanged.unsubscribe();
   }
 
   /**
