@@ -2,13 +2,13 @@ import { Component } from '@angular/core';
 import { MatDialogModule } from '@angular/material/dialog';
 
 @Component({
-  selector: 'app-add-data-popup',
+  selector: 'app-default-dialog',
   standalone: true,
   imports: [MatDialogModule],
-  templateUrl: './add-data-popup.component.html',
-  styleUrl: './add-data-popup.component.css'
+  templateUrl: './default-dialog.component.html',
+  styleUrl: './default-dialog.component.css'
 })
-export class AddDataPopupComponent {
+export class DefaultDialogComponent {
   submitData() {
     // Submit data to the server
     console.log('Data submitted');

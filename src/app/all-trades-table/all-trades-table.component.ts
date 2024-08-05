@@ -8,7 +8,7 @@ import { MatDialogModule } from '@angular/material/dialog';
 
 import { AllTradesTableDataSource, AllTradesTableItem } from './all-trades-table-datasource';
 import { DataService } from '../shared/data.service';
-import { AddDataPopupService } from './add-data-popup/add-data-popup.service';
+import { DialogPopupService } from './dialog-popup/dialog-popup.service';
 
 @Component({
   selector: 'app-all-trades-table',
@@ -28,7 +28,7 @@ export class AllTradesTableComponent implements AfterViewInit {
   @ViewChild(MatTable) table!: MatTable<AllTradesTableItem>;
 
   constructor(private dataService: DataService,
-              private addDataPopup: AddDataPopupService) {}
+              private dialogPopup: DialogPopupService) {}
 
   dataSource = new AllTradesTableDataSource(this.dataService);
 
@@ -41,8 +41,8 @@ export class AllTradesTableComponent implements AfterViewInit {
     this.table.dataSource = this.dataSource;
   }
 
-  openPopup() {
-    this.addDataPopup.openPopup();
+  openDialog() {
+    this.dialogPopup.openDialog();
   }
 
 }

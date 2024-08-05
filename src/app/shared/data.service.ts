@@ -51,7 +51,7 @@ export class DataService {
   }
 
   addTrade(trade: Trade) {
-    this.allTrades.push(trade);
+    this.allTrades.push(trade);console.log(this.allTrades);
     this.tradesChanged.emit(this.allTrades.slice());
   }
 
@@ -72,5 +72,9 @@ export class DataService {
   addTradeIdeas(tradeIdeas: TradeIdea[]) {
     this.allTradeIdeas.push(...tradeIdeas);
     this.tradeIdeasChanged.emit(this.allTradeIdeas.slice());
+  }
+
+  totalTrades() {
+    return this.allTrades.length;
   }
 }
