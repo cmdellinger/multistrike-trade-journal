@@ -62,7 +62,6 @@ export class AddDataDialogComponent {
       fees: parseFloat(this.form.value.fees!),
       total: parseFloat(this.form.value.quantity!) * parseFloat(this.form.value.price!) + parseFloat(this.form.value.fees!),
     };
-    console.log(newTrade);
     this.dataService.addTrade(newTrade);
   }
 }

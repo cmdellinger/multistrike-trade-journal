@@ -51,7 +51,7 @@ export class DataService {
   }
 
   addTrade(trade: Trade) {
-    this.allTrades.push(trade);console.log(this.allTrades);
+    this.allTrades.push(trade);
     this.tradesChanged.emit(this.allTrades.slice());
   }
 
