@@ -4,6 +4,7 @@ export interface Trade {
     time: string;
     ticker: string;
     action: string;
+    side: string;
     quantity: number;
     price: number;
     fees: number;

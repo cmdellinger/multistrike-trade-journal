@@ -33,7 +33,7 @@ export class AllTradesTableComponent implements AfterViewInit {
   dataSource = new AllTradesTableDataSource();
 
   /** Columns displayed in the table. Columns IDs can be added, removed, or reordered. */
-  displayedColumns = ['id', 'date', 'time', 'ticker', 'action', 'quantity', 'price'];
+  displayedColumns = ['id', 'date', 'time', 'ticker', 'action', 'side', 'quantity', 'price', 'fees'];
 
   ngAfterViewInit(): void {
     this.dataSource.sort = this.sort;

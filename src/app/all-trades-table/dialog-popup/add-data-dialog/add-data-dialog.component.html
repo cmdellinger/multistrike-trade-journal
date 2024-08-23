@@ -4,27 +4,42 @@
         <mat-form-field appearance="fill">
             <mat-label>Id</mat-label>
             <input matInput formControlName="id" readonly>
+            <mat-hint>readonly</mat-hint>
         </mat-form-field>
         <mat-form-field appearance="fill">
-            <mat-label>Action</mat-label>
-            <mat-select formControlName="action">
-                <mat-option value="buy">buy</mat-option>
-                <mat-option value="sell">sell</mat-option>
-            </mat-select>
+            <mat-label>Symbol</mat-label>
+            <input matInput formControlName="symbol">
         </mat-form-field>
         <br>
         <mat-form-field appearance="fill">
             <mat-label>Date</mat-label>
-            <input matInput formControlName="date">
+            <input matInput formControlName="date" [matDatepicker]="picker">
+            <mat-hint>MM/DD/YYYY</mat-hint>
+            <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
         </mat-form-field>
         <mat-form-field appearance="fill">
             <mat-label>Time</mat-label>
-            <input matInput formControlName="time">
+            <input matInput formControlName="time" type="time">
+        </mat-form-field>
+        <br>
+        <mat-form-field appearance="fill">
+            <mat-label>Action</mat-label>
+            <mat-select formControlName="action">
+                <mat-option value="open">open</mat-option>
+                <mat-option value="close">close</mat-option>
+            </mat-select>
+            <mat-hint>open | close</mat-hint>
         </mat-form-field>
         <mat-form-field appearance="fill">
-            <mat-label>Ticker</mat-label>
-            <input matInput formControlName="ticker">
+            <mat-label>Side</mat-label>
+            <mat-select>
+                <mat-option value="buy">buy</mat-option>
+                <mat-option value="sell">sell</mat-option>
+            </mat-select>
+            <mat-hint>buy | sell</mat-hint>
         </mat-form-field>
+        <br>
         <mat-form-field appearance="fill">
             <mat-label>Quantity</mat-label>
             <input matInput formControlName="quantity">
@@ -32,6 +47,10 @@
         <mat-form-field appearance="fill">
             <mat-label>Price</mat-label>
             <input matInput formControlName="price">
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+            <mat-label>Fees</mat-label>
+            <input matInput formControlName="fees">
         </mat-form-field>
     </form>
 </div>
