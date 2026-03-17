@@ -1,32 +1,47 @@
-
-<mat-card class="example-card" appearance="outlined">
+<div class="home-container">
+  <mat-card class="welcome-card" appearance="outlined">
     <mat-card-header>
       <div mat-card-avatar class="example-header-image"></div>
       <mat-card-title>Multistrike Trade Journal</mat-card-title>
       <mat-card-subtitle>Version: Toy</mat-card-subtitle>
     </mat-card-header>
-    <div style="text-align: center">
-        <img mat-card-image
-            src="assets/images/journal.jpg"
-            alt="Photo of a Cat Hologram on a Journal"
-            width="30%"
-            height="30%"
-        >
+
+    <div class="image-container">
+      <img mat-card-image
+        src="assets/images/journal.jpg"
+        alt="Photo of a Cat Hologram on a Journal">
     </div>
+
     <mat-card-content>
       <p>
-        <br>
-        <b>This is the toy version.</b>
-        <br> <br>
-        This is a trading journal for equities, foreign exchange, and cryptocurrencies. The goal is to track trade ideas and their outcomes.
-         A trade idea is an instance of the execution of a trade setup, allowing multiple attempts with multiple entries and exits per attempt.
-        <br> <br>
-        The Dashboard hasn't been implemented yet. It will have cards with summaries and graphs of trade ideas outcomes.
-         The page is  <a routerLink="/dashboard">there</a>, but it is currently just empyt frames. 
-        <br> <br>
-        This is being built using Angular and Angular Material, which is new to me, so it's a taking a bit longer than expected.
-        <br> <br>
-        Feel free to drop some feedback on <a href="https://x.com/gte539z/status/1809791436294066272">Twitter</a>.
+        <b>Welcome to the Multistrike Trade Journal!</b>
+      </p>
+      <br>
+      <p>
+        This is a comprehensive trading journal for equities, foreign exchange, and cryptocurrencies.
+        The goal is to track trade ideas and their outcomes with precision and insight.
+      </p>
+      <br>
+      <p>
+        A trade idea represents the execution of a trade setup, allowing multiple attempts with
+        multiple entries and exits per attempt. This flexible structure helps you analyze your
+        trading patterns and improve your strategy over time.
+      </p>
+      <br>
+      <p>
+        The <a routerLink="/dashboard">Dashboard</a> is currently under development and will feature
+        cards with summaries and graphs of trade ideas outcomes. Stay tuned for updates!
+      </p>
+      <br>
+      <p>
+        This application is being built using Angular and Angular Material. As a learning project,
+        it's evolving continuously with new features and improvements.
+      </p>
+      <br>
+      <p>
+        Feel free to drop some feedback on
+        <a href="https://x.com/gte539z/status/1809791436294066272" target="_blank" rel="noopener">Twitter</a>.
       </p>
     </mat-card-content>
   </mat-card>
+</div>

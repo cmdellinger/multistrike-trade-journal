@@ -3,15 +3,64 @@
 }
 
 .sidenav {
-  width: 200px;
+  width: 240px;
+  box-shadow: 2px 0 8px rgba(0, 0, 0, 0.1);
 }
 
 .sidenav .mat-toolbar {
   background: inherit;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+  font-size: 1.1rem;
+  font-weight: 500;
 }
 
 .mat-toolbar.mat-primary {
   position: sticky;
   top: 0;
-  z-index: 1;
+  z-index: 1000;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Navigation list styling */
+.sidenav .mat-mdc-list-item {
+  margin: 4px 8px;
+  border-radius: 8px;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.sidenav .mat-mdc-list-item:hover {
+  background-color: rgba(63, 81, 181, 0.08);
+  transform: translateX(4px);
+}
+
+.sidenav .mat-mdc-list-item.active {
+  background-color: rgba(63, 81, 181, 0.12);
+  font-weight: 500;
+}
+
+/* Icon styling */
+.sidenav .mat-icon {
+  margin-right: 16px;
+  color: rgba(0, 0, 0, 0.6);
+  transition: color 0.2s ease;
+}
+
+.sidenav .mat-mdc-list-item:hover .mat-icon,
+.sidenav .mat-mdc-list-item.active .mat-icon {
+  color: #3F51B5;
+}
+
+/* Menu button */
+.mat-toolbar button.mat-icon-button {
+  transition: transform 0.2s ease;
+}
+
+.mat-toolbar button.mat-icon-button:hover {
+  transform: rotate(90deg);
+}
+
+/* Content area padding */
+.sidenav-container .mat-drawer-content {
+  padding: 24px;
+  background-color: #fafafa;
 }
